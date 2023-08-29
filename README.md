@@ -9,14 +9,12 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -47,12 +45,6 @@
 > - **Use of Class in Ruby**
 > - **Public and Private methods in Ruby**
 > - **Inheritence in Ruby**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> *Not Available!*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,14 +99,6 @@
 ```sh
   rubocop
 ```
-
-> *Tests: Coming Soon!*
-
-### Deployment
-
-*Not Available!*
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
