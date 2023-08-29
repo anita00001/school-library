@@ -121,8 +121,7 @@
 ## 🤝 Contributing <a name="contributing"></a>
 
 > Contributions, issues, and feature requests are welcome!
-<br>
-Feel free to check the [issues page](https://github.com/anita00001/school-library/issues/).
+Feel free to check the [issue page](https://github.com/anita00001/school-library/issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
