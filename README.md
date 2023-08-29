@@ -45,6 +45,7 @@
 > - **Use of Class in Ruby**
 > - **Public and Private methods in Ruby**
 > - **Inheritence in Ruby**
+> - **Decorators in Ruby**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
