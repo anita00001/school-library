@@ -8,5 +8,6 @@ class Classroom
 
   def add_student(student)
     @students << student
+    student.classroom = self # Set the classroom for the student
   end
 end
