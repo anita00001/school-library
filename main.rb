@@ -16,7 +16,7 @@ person = Person.new(22, 'maximilianus')
 capitalized_name = Capitalize.new(person)
 trimmed_name = Trimmer.new(capitalized_name)
 
-puts "The given name: #{person.correct_name}"
+puts "\nThe given name: #{person.correct_name}"
 puts "Name Capitalized: #{capitalized_name.correct_name}"
 puts "Name Trimmed: #{trimmed_name.correct_name}"
 
@@ -24,7 +24,7 @@ puts "Name Trimmed: #{trimmed_name.correct_name}"
 math_classroom = Classroom.new('Math Class')
 student = Student.new(math_classroom, 16, 'Alice')
 
-puts "#{student.name}'s classroom: #{student.classroom.label}"  # Access the student's classroom attribute
+puts "\n#{student.name}'s classroom: #{student.classroom.label}"  # Access the student's classroom attribute
 puts "#{math_classroom.label} students: #{math_classroom.students.map(&:name).join(', ')}"  # Access the classroom's students list
 
 # Verify many-to-many relationship between Person and Book using Rental class
@@ -39,9 +39,24 @@ rental2 = person1.add_rental(book2, Date.new(2023, 8, 28))
 rental3 = person2.add_rental(book1, Date.new(2023, 8, 25))
 
 # Display rentals for person
-puts "#{person1.name} rents: #{rental1.book.title} (Rented on #{rental1.date})"
+puts "\n#{person1.name} rents: #{rental1.book.title} (Rented on #{rental1.date})"
 puts "#{person2.name} rents: #{rental3.book.title} (Rented on #{rental3.date})"
 
 # Display rentals for book
 puts "#{book1.title} rentals: #{rental1.person.name} (Rented on #{rental1.date})"
 puts "#{book1.title} rentals: #{rental3.person.name} (Rented on #{rental3.date})"
+
+
+# Verify has-many relationship between Book and Rental
+rental4 = Rental.new(person1, book1, Date.new(2023, 8, 27))
+rental5 = Rental.new(person1, book2, Date.new(2023, 8, 26))
+rental6 = Rental.new(person2, book1, Date.new(2023, 8, 24))
+
+# Add the rentals to the books
+book1.add_rental(rental1)
+book1.add_rental(rental3)
+book2.add_rental(rental2)
+
+# Display rentals for each book
+puts "\n#{book1.title} rentals: #{rental4.person.name} (Rented on #{rental4.date})"
+puts "#{book1.title} rentals: #{rental6.person.name} (Rented on #{rental4.date})"

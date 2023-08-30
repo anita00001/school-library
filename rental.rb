@@ -6,5 +6,6 @@ class Rental
     @date = date
     @person = person
     @book = book
+    book.add_rental(self) # Add this rental to the book's rentals array
   end
 end

@@ -7,4 +7,8 @@ class Book
     @author = author
     @rentals = [] # Array to store rentals
   end
+
+  def add_rental(rental)
+    @rentals << rental
+  end
 end
