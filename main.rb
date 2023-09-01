@@ -26,9 +26,21 @@ def run_app(selected_option, app)
     app.create_person
   when 4
     app.create_book
+  when 5
+    app.create_rental
+  when 6
+    app.list_rentals
+  when 7
+    exit_app
   else
     puts 'Invalid option, please try again'
   end
+end
+
+def exit_app
+  puts '🙏Thanks for using this application🙏 Goodbye!👋'
+  puts "\n"
+  exit
 end
 
 def main
@@ -36,13 +48,7 @@ def main
   loop do
     display
     selected_option = gets.chomp.to_i
-    if selected_option == 7
-      puts '🙏Thanks for using this application🙏 Goodbye!👋'
-      puts "\n"
-      break
-    else
-      run_app(selected_option, app)
-    end
+    run_app(selected_option, app)
   end
 end
 

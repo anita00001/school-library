@@ -2,11 +2,13 @@ require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'rental'
 
 class App
   def initialize
     @books = []
     @persons = []
+    @rentals = []
   end
 
   def list_all_books
@@ -81,5 +83,22 @@ class App
     puts 'Author: '
     author = gets.chomp
     @books << Book.new(title, author)
+  end
+
+  def create_rental
+    puts "\n"
+    puts 'Creating a rental...'
+    puts 'Select a book from the following list by number'
+    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    book_index = gets.chomp.to_i
+    book = @books[book_index]
+    puts 'Select a person from the following list by number (not id)'
+    @persons.each_with_index { |person, index| puts "#{index}) Name: #{person.name}, ID: #{person.id}" }
+    person_index = gets.chomp.to_i
+    person = @persons[person_index]
+    puts 'Date (yyyy-mm-dd): '
+    date = gets.chomp
+    @rentals << Rental.new(@persons[person_index], @books[book_index], date)
+    puts 'Rental created successfully🚀'
   end
 end
