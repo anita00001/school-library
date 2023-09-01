@@ -46,7 +46,6 @@ puts "#{student1.name} belongs to #{student1.classroom.label}"
 puts "#{student2.name} belongs to #{student2.classroom.label}"
 puts "#{student3.name} belongs to #{student3.classroom.label}"
 
-
 # Verify many-to-many relationship between Person and Book using Rental class
 person1 = Person.new(25, 'John')
 person2 = Person.new(19, 'Alice')
