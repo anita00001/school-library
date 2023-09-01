@@ -44,6 +44,29 @@ class App
     puts 'Teacher created successfully🚀'
   end
 
+  def create_student
+    puts "\n"
+    puts 'Creating a student...'
+    puts 'Name: '
+    name = gets.chomp
+    puts 'Age: '
+    age = gets.chomp.to_i
+    puts 'Classroom: '
+    classroom = gets.chomp
+    puts 'Has parent permission? [Y/N]: '
+    has_parent_permission = gets.chomp.upcase
+    if has_parent_permission != 'Y' && has_parent_permission != 'N'
+      puts 'Invalid option, please try again'
+    elsif has_parent_permission === 'Y'
+      has_parent_permission = true
+    elsif has_parent_permission === 'N'
+      has_parent_permission = false
+    end
+    student = Student.new(classroom, age, name, has_parent_permission)
+    @persons << student
+    puts 'Student created successfully🚀'
+  end
+
   def create_book
     puts "\n"
     puts 'Creating a book...'
