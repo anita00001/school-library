@@ -5,6 +5,10 @@ class App
     @books = []
   end
 
+  def list_all_books
+    @books.each { |book| puts "Book: Title : #{book.title}, Author : #{book.author}" }
+  end
+
   def create_book
     puts 'Title: '
     title = gets.chomp

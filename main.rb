@@ -18,6 +18,8 @@ end
 
 def run_app(selected_option, app)
   case selected_option
+  when 1
+    app.list_all_books
   when 4
     app.create_book
   when 7
