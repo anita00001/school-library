@@ -16,24 +16,24 @@ def display
   puts "\n"
 end
 
-def run_app(selected_option, app)
-  case selected_option
-  when 1
-    app.list_all_books
-  when 2
-    app.list_all_people
-  when 3
-    app.create_person
-  when 4
-    app.create_book
-  when 5
-    app.create_rental
-  when 6
-    app.list_rentals
-  when 7
-    exit_app
-  else
-    puts 'Invalid option, please try again'
+def run_app(app)
+  input_options = {
+    '1' => :list_all_books,
+    '2' => :list_all_people,
+    '3' => :create_person,
+    '4' => :create_book,
+    '5' => :create_rental,
+    '6' => :list_rentals,
+    '7' => :exit_apps
+  }
+  loop do
+    display
+    selected_option = gets.chomp
+    if selected_option == '7'
+      exit_app
+    elsif input_options.key?(selected_option)
+      app.send(input_options[selected_option])
+    end
   end
 end
 
@@ -45,11 +45,7 @@ end
 
 def main
   app = App.new
-  loop do
-    display
-    selected_option = gets.chomp.to_i
-    run_app(selected_option, app)
-  end
+  run_app(app)
 end
 
 main
