@@ -3,9 +3,10 @@ class Rental
   attr_reader :book, :person
 
   def initialize(person, book, date)
-    @date = date
     @person = person
     @book = book
-    book.add_rental(self) # Add this rental to the book's rentals array
+    @date = date
+    person.rentals << self # Add the current rental to the person's rentals list
+    book.rentals << self # Add the current rental to the book's rentals list
   end
 end
