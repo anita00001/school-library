@@ -3,7 +3,7 @@ class Classroom
 
   def initialize(label)
     @label = label
-    @students = []   # Initialize an empty array to store students
+    @students = [] # Initialize an empty array to store students
   end
 
   def add_student(student)
