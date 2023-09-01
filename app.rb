@@ -65,9 +65,9 @@ class App
     has_parent_permission = gets.chomp.upcase
     if has_parent_permission != 'Y' && has_parent_permission != 'N'
       puts 'Invalid option, please try again'
-    elsif has_parent_permission === 'Y'
+    elsif has_parent_permission == 'Y'
       has_parent_permission = true
-    elsif has_parent_permission === 'N'
+    elsif has_parent_permission == 'N'
       has_parent_permission = false
     end
     student = Student.new(classroom, age, name, has_parent_permission)
@@ -98,7 +98,7 @@ class App
     person = @persons[person_index]
     puts 'Date (yyyy-mm-dd): '
     date = gets.chomp
-    @rentals << Rental.new(@persons[person_index], @books[book_index], date)
+    @rentals << Rental.new(person, book, date)
     puts 'Rental created successfully🚀'
   end
 
