@@ -101,4 +101,17 @@ class App
     @rentals << Rental.new(@persons[person_index], @books[book_index], date)
     puts 'Rental created successfully🚀'
   end
+
+  def list_rentals
+    puts "\nListing rentals by person's id..."
+    puts 'Please input the person id: '
+    @persons.each { |person| puts "Person: ID = #{person.id}, Name : #{person.name}" }
+    person_id = gets.chomp.to_i
+    puts "\nRentals by ID #{person_id} are: "
+    @rentals.each do |rental|
+      if rental.person.id == person_id
+        puts "Book: #{rental.book.title}, Author: #{rental.book.author}, Date: #{rental.date}"
+      end
+    end
+  end
 end
